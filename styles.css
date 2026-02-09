@@ -75,7 +75,6 @@ body {
     text-align: end;
 }
 .hobbies{
-    /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
 }
@@ -144,16 +143,3 @@ h2 {
 .project .location {
   font-weight: 500;
 }
-/* .project .item {
-  position: relative;
-}
-.project .item::before {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  background-color: #000;
-  content: "";
-  border-radius: 50%;
-  top: 5px;
-  left: -37px;
-} */
