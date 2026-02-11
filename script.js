@@ -24,3 +24,28 @@ themeToggle.addEventListener('click', () => {
             
     updateThemeButton();
 });
+
+// Fonction pour imprimer en light mode
+function printInLightMode() {
+    const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    
+    // Si pas en light mode, forcer le light mode
+    if (currentTheme === 'dark') {
+        document.body.classList.remove('dark-mode');
+        document.body.classList.add('light-mode');
+        
+        // Attendre que le changement soit appliqué, puis imprimer
+        setTimeout(() => {
+            window.print();
+            
+            // Restaurer le thème original après l'impression
+            setTimeout(() => {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+            }, 500);
+        }, 100);
+    } else {
+        // Déjà en light mode, on peut imprimer directement
+        window.print();
+    }
+}

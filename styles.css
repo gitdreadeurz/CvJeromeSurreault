@@ -108,6 +108,7 @@ h2 {
 }
 .experience {
   text-align: right;
+  margin-top: 0.5%;
 }
 .experience h4 {
   margin: 20px 0 10px;
@@ -150,6 +151,8 @@ h2 {
 .project .location {
   font-weight: 500;
 }
+
+/* ======= MEDIA QUERY RESPONSIVE ======= */
 
 @media (max-width : 768px) {
    body{
@@ -211,6 +214,243 @@ h2 {
     padding-left : 10%;
     padding-bottom: 5%;
   }
+}
+
+/* ====== MEDIA QUERY PRINT ====== */
+
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background-color: #fff;
+    display: block;
+  }
+
+  .theme-print,
+  .theme-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .avatar {
+    display: none;
+  }
+
+  .name {
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .printname-left,
+  .printname-right {
+    display: block;
+  }
+
+  .name h1 {
+    font-size: 26pt;
+    margin: 0;
+  }
+
+  .name .specialize {
+    font-size: 11pt;
+    margin: 1px 0 3px 0;
+  }
+
+  .name .contact {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .name .contact li {
+    transform: none;
+    padding: 0;
+    background-color: transparent;
+    font-size: 10pt;
+  }
+
+  .name .contact div {
+    display: none;
+  }
+
+  .link {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .hobbies {
+    display: none;
+  }
+
+  .intro {
+    padding: 0;
+    border-left: none;
+    margin-top: 7%;
+    color: #000;
+  }
+
+  .intro h2 {
+    font-size: 14pt;
+    margin: 0 0 3px 0;
+    font-weight: bold;
+  }
+
+  .intro {
+    font-size: 11pt;
+    text-align: justify;
+    line-height: 1.4;
+  }
+
+  /* Layout 2 colonnes pour experience et project */
+  .experience,
+  .project {
+    display: inline-block;
+    width: 48%;
+    padding: 0;
+    border-left: none;
+    margin-bottom: 5px;
+    color: #000;
+    vertical-align: top;
+  }
+
+  .experience {
+    margin-top: 7%;
+    margin-right: 2%;
+  }
+
+  .project{
+    margin-top: 7%;
+  }
+
+  .experience h2,
+  .project h2 {
+    font-size: 15pt;
+    margin: 0 0 4px 0;
+    font-weight: bold;
+    margin-bottom: 5%;
+  }
+
+  .experience h4,
+  .project h4 {
+    font-size: 11pt;
+    margin: 2px 0 1px 0;
+    font-weight: bold;
+    margin-bottom: 2%;
+  }
+
+  .item {
+    page-break-inside: avoid;
+    margin-bottom: 3px;
+  }
+
+  .time {
+    display: flex;
+    font-size: 11pt;
+    margin: 0;
+    margin-bottom: 3%;
+    padding: 0;
+    gap: 5px;
+  }
+
+  .time p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .time p:first-child {
+    font-weight: bold;
+    min-width: 50px;
+  }
+
+  .time .place,
+  .time .location {
+    font-weight: normal;
+  }
+
+  .skill {
+    /* clear: both; */
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .skills {
+    font-size: 15pt;
+    margin: 4px 0 3px 0;
+    font-weight: bold;
+    clear: both;
+  }
+
+  .skill-left,
+  .skill-right {
+    display: inline-block;
+    width: 48%;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+  }
+
+  .skill-right {
+    margin-left: 2%;
+  }
+
+  .skill ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .skill li {
+    padding: 0;
+    margin: 1px 0;
+    font-size: 10pt;
+  }
+}
+
+/* ===== THEME PRINT BUTTON ===== */
+.theme-print{
+  position: fixed;
+  top: 85px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-print:hover{
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== THEME TOGGLE BUTTON ===== */
